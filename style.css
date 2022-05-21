@@ -39,8 +39,8 @@ h1{
 .grid{
     display: flex;
     flex-wrap: wrap;
-    width:360px;
-    height:360px;
+    width:480px;
+    height:480px;
     /* justify-content: flex-end; */
     /* border: black 1px solid; */
 
