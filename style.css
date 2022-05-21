@@ -26,6 +26,7 @@ h1{
 }
 .resetBtn, .resizeBtn {
     font-family: MetalItalic;
+    font-size: 20px;
     padding: 15px;
     border-radius: 5px;
     border: #000 5px solid;
