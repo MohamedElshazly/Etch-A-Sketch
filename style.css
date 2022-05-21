@@ -31,6 +31,9 @@ h1{
     border-radius: 5px;
     border: #000 5px solid;
     transition: color .5s, font-size .5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
 }
 .resetBtn:hover, .resizeBtn:hover{
     background-color: #000;
