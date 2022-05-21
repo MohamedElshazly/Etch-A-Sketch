@@ -5,8 +5,11 @@ let squareSize;
 let squares;
 
 const getCanvasDim = () => {
-    dimSize = prompt('Enter canvas dimensions(square canvas) ex: 16 --> 16x16');
-    squareSize = (480/dimSize);
+    do {
+        dimSize = prompt('Enter canvas dimensions(square canvas) ex: 16 --> 16x16');
+        squareSize = (480/dimSize);
+    }  while(dimSize > 100);
+    
 }
 
 

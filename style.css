@@ -30,6 +30,13 @@ h1{
     padding: 15px;
     border-radius: 5px;
     border: #000 5px solid;
+    transition: color .5s, font-size .5s;
+}
+.resetBtn:hover, .resizeBtn:hover{
+    background-color: #000;
+    color: #fff;
+    font-size: 22px;
+    
 }
 .content {
     display: flex;
