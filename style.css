@@ -11,18 +11,21 @@ html {
 .content {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
+    gap:10px;
 }
 .grid{
     display: flex;
     flex-wrap: wrap;
-    width:480px;
-    height:480px;
+    width:360px;
+    height:360px;
+    /* justify-content: flex-end; */
+    /* border: black 1px solid; */
+
 }
-.square{
+/* .square{
     display: flex;
     width: 30px;
     height: 30px;
     border: black 1px solid;
-}
+} */
