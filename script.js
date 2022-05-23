@@ -31,13 +31,39 @@ const createCanvas = () => {
 
     squares = document.querySelectorAll('.square');
     const drawButton = document.querySelector('.drawBtn');
+    const eraseButton = document.querySelector('.eraseBtn');
+
+    //drawing 
     drawButton.addEventListener('click', () => {
-        drawButton.classList.remove('btn')
-        drawButton.classList.add('activeBtn')
+        //make draw button active and erase button not active
+        drawButton.classList.remove('btn');
+        drawButton.classList.add('activeBtn');
+        
+        eraseButton.classList.remove('activeBtn');
+        eraseButton.classList.add('btn');
+        
         squares.forEach((square) => {  
             square.addEventListener('mousemove', (e) => {
                 if(e.buttons == 1 || e.buttons == 3){
                     square.style.setProperty('background-color', 'black');
+                }
+            });
+        });        
+    })
+
+    //erasing
+    eraseButton.addEventListener('click', () => {
+        //The opposite
+        eraseButton.classList.remove('btn');
+        eraseButton.classList.add('activeBtn');
+
+        drawButton.classList.remove('activeBtn');
+        drawButton.classList.add('btn');
+        
+        squares.forEach((square) => {  
+            square.addEventListener('mousemove', (e) => {
+                if(e.buttons == 1 || e.buttons == 3){
+                    square.style.setProperty('background-color', 'white');
                 }
             });
         });        
@@ -67,10 +93,14 @@ resizeCanvasButton.addEventListener('click', () => {
     deleteCanvas();
     createCanvas();
     const drawButton = document.querySelector('.drawBtn');
-    drawButton.classList.remove('activeBtn')
-    drawButton.classList.add('btn')
+    const eraseButton = document.querySelector('.eraseBtn');
 
-    // drawButton.setAttribute('style', ' color: #000');
+    drawButton.classList.remove('activeBtn');
+    drawButton.classList.add('btn');
+
+    eraseButton.classList.remove('activeBtn');
+    eraseButton.classList.add('btn');
+
 
 
 })
