@@ -8,7 +8,7 @@ const getCanvasDim = () => {
     do {
         dimSize = prompt('Enter canvas dimensions(square canvas) ex: 16 --> 16x16');
         squareSize = (480/dimSize);
-    }  while(dimSize > 100);
+    }  while(dimSize > 100 || dimSize == null);
     
 }
 
@@ -30,14 +30,19 @@ const createCanvas = () => {
     };
 
     squares = document.querySelectorAll('.square');
-    squares.forEach((square) => {
-        square.addEventListener('mousemove', (e) => {
-            if(e.buttons == 1 || e.buttons == 3){
-                square.style.setProperty('background-color', 'black');
-            }
-        });
-
-});
+    const drawButton = document.querySelector('.drawBtn');
+    drawButton.addEventListener('click', () => {
+        drawButton.classList.remove('btn')
+        drawButton.classList.add('activeBtn')
+        squares.forEach((square) => {  
+            square.addEventListener('mousemove', (e) => {
+                if(e.buttons == 1 || e.buttons == 3){
+                    square.style.setProperty('background-color', 'black');
+                }
+            });
+        });        
+    })
+    
 };
 const deleteCanvas = () => {
     const squares = document.querySelectorAll('.square');
@@ -61,6 +66,13 @@ const resizeCanvasButton = document.querySelector('.resizeBtn');
 resizeCanvasButton.addEventListener('click', () => {
     deleteCanvas();
     createCanvas();
+    const drawButton = document.querySelector('.drawBtn');
+    drawButton.classList.remove('activeBtn')
+    drawButton.classList.add('btn')
+
+    // drawButton.setAttribute('style', ' color: #000');
+
+
 })
 
 const resetCanvasButton = document.querySelector('.resetBtn');
